@@ -34,7 +34,7 @@ class _SideMenuState extends State<SideMenu> {
                         ?.copyWith(color: Colors.white70),
                   ),
                 ),
-               
+                  ...sideMenu.map(
                       (menu) => SideMenuItems(
                     menu: menu,
                     riveonInit: (artboard) {
