@@ -5,14 +5,15 @@
 <!-- project philosophy -->
 <img src="./readme/title2.svg"/>
 
-> A mobile app for ordering coffee on-the-go, making it easier for coffee lovers to get their favorite beverages without waiting in line.
->
-> Coffee Express aims to streamline the coffee-ordering process by providing a user-friendly platform for customers to place orders and pick up their coffee at their convenience. We believe in enhancing the coffee experience by saving time and ensuring customer satisfaction.
+> The Predicate Pro is a web application specifically designed for supermarkets, in order to track and evaluate customer behavior. Its primary objective is to generate accurate forecasts to get the optimal product placement on shelves, recommendations for increased stock quantities, and identification of items that require inventory reduction. Furthermore, this application gives supermarkets access to detailed monthly reports and visual graphs, allowing them to closely monitor purchase trends and assess profitability. and that will be done using machine learning and artificial intelligence.
 
 ### User Stories
-- As a user, I want to browse the menu, so I can find my favorite coffee drinks.
-- As a user, I want to customize my order, so I can add or remove ingredients according to my preferences.
-- As a user, I want to pay for my order through the app, so I can avoid waiting in line at the store.
+- As a Supermarket owner, I want to categorize Customers so that I can filter behavior data.
+- As a Supermarket owner, I want to get Seasonal Predictions so that I can plan the inventory.
+- As a Store manager, I want Inventory Reduction Suggestions so that I can receive recommendations for minimizing waste and improving profit.
+- As a user I want to Create a Profile so that I can save my work and data.
+- As a user I want to Edit my Profile so that I can change my info.
+
 
 <br><br>
 
