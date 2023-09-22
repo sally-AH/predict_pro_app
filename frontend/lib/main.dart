@@ -51,7 +51,50 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
-
+              Column(
+                children: <Widget>[
+                  MaterialButton(
+                    minWidth: double.infinity,
+                    height: 60,
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> LoginPage()));
+                    },
+                    shape: RoundedRectangleBorder(
+                      side: const BorderSide(
+                        color: Colors.black
+                      ),
+                      borderRadius: BorderRadius.circular(50),
+                    ),
+                    child: const Text(
+                      "Login",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 18,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  MaterialButton(
+                    minWidth: double.infinity,
+                    height: 60,
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> SignUpPage()));
+                    },
+                    color: const Color(0xff0095FF),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50),
+                    ),
+                    child: const Text(
+                      "Sign up",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 18,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
