@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/screens/login.dart';
+import 'package:frontend/screens/singup.dart';
 
 void main() {
   runApp(MaterialApp(
