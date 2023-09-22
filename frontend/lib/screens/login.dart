@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/screens/singup.dart';
-
+import 'package:predict_pro/chat_main.dart';
+import 'package:predict_pro/contacts.dart';
+import 'package:predict_pro/dashboard.dart';
+import 'package:predict_pro/signup.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
@@ -9,6 +12,23 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final _auth = FirebaseAuth.instance;
+  final _formKey = GlobalKey<FormState>();
+  String _email='';
+  String _password='';
+  void _trySubmit(String email, String password) async {
+    final isValid = _formKey.currentState?.validate();
+    FocusScope.of(context).unfocus();
+    if (isValid != null){
+      _formKey.currentState?.save();
+      print(email);
+      print(password);
+      await _auth.signInWithEmailAndPassword(email: email, password: password);
+      Navigator.push(context, MaterialPageRoute(builder: (context)=> Dashboard()));
+    }
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -62,6 +82,7 @@ class _LoginPageState extends State<LoginPage> {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 40),
                       child: Form(
+                        key: _formKey,
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
@@ -78,6 +99,9 @@ class _LoginPageState extends State<LoginPage> {
                               decoration: InputDecoration(
                                   labelText: 'Email Address'
                               ),
+                              onSaved: (value){
+                                _email = value!;
+                              },
                             ),
                             TextFormField(
                               validator: (value){
@@ -92,6 +116,9 @@ class _LoginPageState extends State<LoginPage> {
                                   labelText: 'Password'
                               ),
                               obscureText: true,
+                              onSaved: (value){
+                                _password = value!;
+                              },
                             ),
                           ],
                         ),
@@ -108,16 +135,16 @@ class _LoginPageState extends State<LoginPage> {
                           minWidth: double.infinity,
                           height: 60,
                           onPressed: (){
-                            
+                            _trySubmit(_email, _password);
                           },
                           color: Color(0xff0095FF),
                           shape: RoundedRectangleBorder(
-                            side: BorderSide(
+                            side: const BorderSide(
                                 color: Colors.black
                             ),
                             borderRadius: BorderRadius.circular(50),
                           ),
-                          child: Text(
+                          child: const Text(
                             "Login",
                             style: TextStyle(
                                 fontWeight: FontWeight.w600,
@@ -131,11 +158,11 @@ class _LoginPageState extends State<LoginPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
+                        const Text(
                           "Don't have an account?",
                         ),
                         TextButton(
-                            child: Text(
+                            child: const Text(
                               "sign up",
                               style: TextStyle(
                                 fontWeight: FontWeight.w600,
@@ -150,9 +177,9 @@ class _LoginPageState extends State<LoginPage> {
                       ],
                     ),
                     Container(
-                      padding: EdgeInsets.only(top: 100),
+                      padding: const EdgeInsets.only(top: 100),
                       height: 200,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         image: DecorationImage(
                             image: AssetImage("assets/background.png")
                         ),
@@ -166,5 +193,6 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+
   }
 }
