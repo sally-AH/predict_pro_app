@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/screens/contacts.dart';
+import 'package:predict_pro/dashboard.dart';
+import 'package:predict_pro/login.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:predict_pro/chat_main.dart';
+import 'package:predict_pro/contacts.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -9,6 +13,23 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+  final _auth = FirebaseAuth.instance;
+  final _formKey = GlobalKey<FormState>();
+  String _username='';
+  String _email='';
+  String _password='';
+  void _trySubmit(String username, String email, String password) async {
+    final isValid = _formKey.currentState?.validate();
+    FocusScope.of(context).unfocus();
+    if (isValid != null){
+      _formKey.currentState?.save();
+      print(email);
+      print(password);
+      await _auth.createUserWithEmailAndPassword(email: email, password: password);
+      Navigator.push(context, MaterialPageRoute(builder: (context)=> Dashboard()));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -59,6 +80,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 40),
                   child: Form(
+                    key: _formKey,
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
@@ -72,6 +94,9 @@ class _SignUpPageState extends State<SignUpPage> {
                             return null;
                           },
                           decoration: InputDecoration(labelText: 'Username'),
+                          onSaved: (value){
+                            _username = value!;
+                          },
                         ),
                         TextFormField(
                           validator: (value) {
@@ -84,6 +109,9 @@ class _SignUpPageState extends State<SignUpPage> {
                           },
                           keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(labelText: 'Email Address'),
+                          onSaved: (value){
+                            _email = value!;
+                          },
                         ),
 
                         TextFormField(
@@ -97,6 +125,9 @@ class _SignUpPageState extends State<SignUpPage> {
                           },
                           decoration: InputDecoration(labelText: 'Password'),
                           obscureText: true,
+                          onSaved: (value){
+                            _password = value!;
+                          },
                         ),
                       ],
                     ),
@@ -111,7 +142,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     minWidth: double.infinity,
                     height: 60,
                     onPressed: () {
-                    
+                      _trySubmit(_username, _email, _password);
                     },
                     color: Color(0xff0095FF),
                     shape: RoundedRectangleBorder(
@@ -152,3 +183,5 @@ class _SignUpPageState extends State<SignUpPage> {
     );
   }
 }
+
+
