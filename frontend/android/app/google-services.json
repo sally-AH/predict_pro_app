@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "681436885689",
+    "project_id": "predict-pro-chat",
+    "storage_bucket": "predict-pro-chat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:681436885689:android:cbe555643e34cd6fe7e168",
+        "android_client_info": {
+          "package_name": "com.example.predict_pro"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcTzyQgr57dL-mQf9GFIxfKYPz-EyC9xA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

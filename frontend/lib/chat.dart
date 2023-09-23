@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:predict_pro/chat/messages.dart';
+import 'package:predict_pro/chat/new_message.dart';
 
-class MyWidget extends StatelessWidget {
-  const MyWidget({super.key});
+class ChatPage extends StatelessWidget {
+  const ChatPage({super.key});
 
   @override
   Widget build(BuildContext context) {

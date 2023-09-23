@@ -1,15 +1,62 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/screens/login.dart';
-import 'package:frontend/screens/singup.dart';
+import 'package:predict_pro/contacts.dart';
+import 'package:predict_pro/dashboard.dart';
+import 'package:predict_pro/login.dart';
+import 'package:predict_pro/menu/side_menu.dart';
+import 'package:predict_pro/signup.dart';
+import 'package:predict_pro/chat.dart';
+import 'package:predict_pro/services/user_service.dart';
+// Import the generated file
+import 'package:firebase_core/firebase_core.dart';
+import 'package:predict_pro/firebase_options.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 
-void main() {
-  runApp(MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: HomePage(),
-      ));
+@pragma('vm:entry-point')
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  // If you're going to use other Firebase services in the background, such as Firestore,
+  // make sure you call `initializeApp` before using other Firebase services.
+  await Firebase.initializeApp();
+
+  print("Handling a background message: ${message.messageId}");
 }
 
+Future<void> main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  print("Token test");
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  print("Token test1");
+  final fcmToken = await FirebaseMessaging.instance.getToken();
+  print("Token $fcmToken");
+  FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+    print('Got a message whilst in the foreground!');
+    print('Message data: ${message.data}');
+
+    if (message.notification != null) {
+      print('Message also contained a notification: ${message.notification}');
+    }
+  });
+
+  runApp(
+      MaterialApp(
+        debugShowCheckedModeBanner: false,
+        // home: ChatMain(),
+        // home: ChatPage(),
+        // home: HomePage(),
+        // home: Contacts(),
+        // home: SideMenu(),
+        home: Dashboard(),
+      )
+  );
+}
+
+
 class HomePage extends StatelessWidget {
+  void _loadUserInfo() async {
+    String token = await getToken();
+    if(token == ""){
+      // Navigator.of(context as BuildContext).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=>Login()), (route)=> false);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {

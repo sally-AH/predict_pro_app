@@ -139,12 +139,12 @@ class _LoginPageState extends State<LoginPage> {
                           },
                           color: Color(0xff0095FF),
                           shape: RoundedRectangleBorder(
-                            side: const BorderSide(
+                            side: BorderSide(
                                 color: Colors.black
                             ),
                             borderRadius: BorderRadius.circular(50),
                           ),
-                          child: const Text(
+                          child: Text(
                             "Login",
                             style: TextStyle(
                                 fontWeight: FontWeight.w600,
@@ -158,11 +158,11 @@ class _LoginPageState extends State<LoginPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text(
+                        Text(
                           "Don't have an account?",
                         ),
                         TextButton(
-                            child: const Text(
+                            child: Text(
                               "sign up",
                               style: TextStyle(
                                 fontWeight: FontWeight.w600,
@@ -177,9 +177,9 @@ class _LoginPageState extends State<LoginPage> {
                       ],
                     ),
                     Container(
-                      padding: const EdgeInsets.only(top: 100),
+                      padding: EdgeInsets.only(top: 100),
                       height: 200,
-                      decoration: const BoxDecoration(
+                      decoration: BoxDecoration(
                         image: DecorationImage(
                             image: AssetImage("assets/background.png")
                         ),

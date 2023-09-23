@@ -1,4 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:predict_pro/dashboard.dart';
+import 'package:predict_pro/rive_utils.dart';
+import 'package:rive/rive.dart';
+import '../models/rive_asset.dart';
 
 class SideMenu extends StatefulWidget {
   const SideMenu({super.key});
@@ -8,6 +13,7 @@ class SideMenu extends StatefulWidget {
 }
 
 class _SideMenuState extends State<SideMenu> {
+  RiveAsset selectedMenu = sideMenu.first;
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -34,7 +40,7 @@ class _SideMenuState extends State<SideMenu> {
                         ?.copyWith(color: Colors.white70),
                   ),
                 ),
-                  ...sideMenu.map(
+                ...sideMenu.map(
                       (menu) => SideMenuItems(
                     menu: menu,
                     riveonInit: (artboard) {
@@ -62,8 +68,10 @@ class _SideMenuState extends State<SideMenu> {
         ),
       ),
     );
+
   }
 }
+
 class SideMenuItems extends StatelessWidget {
   const SideMenuItems({
     Key? key,
