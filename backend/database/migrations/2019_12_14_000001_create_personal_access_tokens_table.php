@@ -48,6 +48,12 @@ return new class extends Migration
             $table->string('address');
             $table->timestamps();
         });
+
+        Schema::create('brand', function (Blueprint $table) {
+            $table->id();
+            $table->string('desc');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -59,5 +65,6 @@ return new class extends Migration
         Schema::dropIfExists('user_types');
         Schema::dropIfExists('stock');
         Schema::dropIfExists('branch');
+        Schema::dropIfExists('brand');
     }
 };
