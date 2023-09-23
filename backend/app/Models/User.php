@@ -11,6 +11,15 @@ use PHPOpenSourceSaver\JWTAuth\Contracts\JWTSubject;
 
 class User extends Authenticatable implements JWTSubject
 {
+
+    public function userType() {
+        return $this->belongsTo(UserType::class, 'usertype_id');
+    }
+
+    public function branch() {
+        return $this->belongsTo(Branch::class, 'branch_id');
+    }
+
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
