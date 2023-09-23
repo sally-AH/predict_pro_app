@@ -54,6 +54,17 @@ return new class extends Migration
             $table->string('desc');
             $table->timestamps();
         });
+
+        
+        Schema::create('cart', function (Blueprint $table) {
+            $table->integer("invoice_id");
+            $table->integer("product_id");
+            $table->double("quantity");
+            $table->double("net");
+            $table->double("vat");
+            $table->double("total");
+            $table->timestamps();
+        });
     }
 
     /**
@@ -66,5 +77,6 @@ return new class extends Migration
         Schema::dropIfExists('stock');
         Schema::dropIfExists('branch');
         Schema::dropIfExists('brand');
+        Schema::dropIfExists('cart');
     }
 };
