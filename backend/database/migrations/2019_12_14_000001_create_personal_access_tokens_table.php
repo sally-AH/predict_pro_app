@@ -81,7 +81,11 @@ return new class extends Migration
             $table->timestamps();
         });
 
-
+        Schema::create('unit_type', function (Blueprint $table) {
+            $table->id();
+            $table->string('desc');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -97,5 +101,6 @@ return new class extends Migration
         Schema::dropIfExists('cart');
         Schema::dropIfExists('category');
         Schema::dropIfExists('event');
+        Schema::dropIfExists('unit_type');
     }
 };
