@@ -65,6 +65,12 @@ return new class extends Migration
             $table->double("total");
             $table->timestamps();
         });
+
+        Schema::create('category', function (Blueprint $table) {
+            $table->id();
+            $table->string('desc');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -78,5 +84,6 @@ return new class extends Migration
         Schema::dropIfExists('branch');
         Schema::dropIfExists('brand');
         Schema::dropIfExists('cart');
+        Schema::dropIfExists('category');
     }
 };
