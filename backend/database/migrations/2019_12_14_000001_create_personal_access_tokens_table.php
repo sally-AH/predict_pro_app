@@ -40,6 +40,14 @@ return new class extends Migration
             $table->timestamps();
         });
 
+        Schema::create('branch', function (Blueprint $table) {
+            $table->id();
+            $table->integer("region_id");
+            $table->string("desc");
+            $table->string('phone');
+            $table->string('address');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -50,5 +58,6 @@ return new class extends Migration
         Schema::dropIfExists('users');
         Schema::dropIfExists('user_types');
         Schema::dropIfExists('stock');
+        Schema::dropIfExists('branch');
     }
 };
