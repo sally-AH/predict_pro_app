@@ -71,6 +71,17 @@ return new class extends Migration
             $table->string('desc');
             $table->timestamps();
         });
+
+        Schema::create('event', function (Blueprint $table) {
+            $table->id();
+            $table->string('desc');
+            $table->dateTime('from');
+            $table->dateTime('to');
+            $table->double("discount");
+            $table->timestamps();
+        });
+
+
     }
 
     /**
@@ -85,5 +96,6 @@ return new class extends Migration
         Schema::dropIfExists('brand');
         Schema::dropIfExists('cart');
         Schema::dropIfExists('category');
+        Schema::dropIfExists('event');
     }
 };
