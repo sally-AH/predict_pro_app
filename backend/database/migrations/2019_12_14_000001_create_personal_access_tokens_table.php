@@ -130,6 +130,12 @@ return new class extends Migration
             $table->integer('event_id');
             $table->timestamps();
         });
+        
+        Schema::create('regions', function (Blueprint $table) {
+            $table->id();
+            $table->String('desc');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -152,6 +158,6 @@ return new class extends Migration
         Schema::dropIfExists('products');
         Schema::dropIfExists('parameters');
         Schema::dropIfExists('product_event');
-
+        Schema::dropIfExists('regions');
     }
 };
