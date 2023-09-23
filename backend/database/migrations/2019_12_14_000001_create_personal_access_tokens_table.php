@@ -29,7 +29,7 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('stock', function (Blueprint $table) {
+        Schema::create('stocks', function (Blueprint $table) {
             $table->id();
             $table->integer("branch_id");
             $table->integer("product_id");
@@ -40,7 +40,7 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('branch', function (Blueprint $table) {
+        Schema::create('branches', function (Blueprint $table) {
             $table->id();
             $table->integer("region_id");
             $table->string("desc");
@@ -49,14 +49,14 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('brand', function (Blueprint $table) {
+        Schema::create('brands', function (Blueprint $table) {
             $table->id();
             $table->string('desc');
             $table->timestamps();
         });
 
         
-        Schema::create('cart', function (Blueprint $table) {
+        Schema::create('carts', function (Blueprint $table) {
             $table->integer("invoice_id");
             $table->integer("product_id");
             $table->double("quantity");
@@ -66,13 +66,13 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('category', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->string('desc');
             $table->timestamps();
         });
 
-        Schema::create('event', function (Blueprint $table) {
+        Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->string('desc');
             $table->dateTime('from');
@@ -81,17 +81,25 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('unit_type', function (Blueprint $table) {
+        Schema::create('unit_types', function (Blueprint $table) {
             $table->id();
             $table->string('desc');
             $table->timestamps();
         });
 
-        Schema::create('invoice', function (Blueprint $table) {
+        Schema::create('invoices', function (Blueprint $table) {
             $table->id();
             $table->integer('branch_id');
             $table->dateTime('date');
             $table->double('total');
+            $table->timestamps();
+        });
+        Schema::create('messages', function (Blueprint $table) {
+            $table->id();
+            $table->integer('sender_id');
+            $table->integer('reciver_id');
+            $table->string('content');
+            $table->dateTime('date');
             $table->timestamps();
         });
     }
@@ -103,13 +111,14 @@ return new class extends Migration
     {
         Schema::dropIfExists('users');
         Schema::dropIfExists('user_types');
-        Schema::dropIfExists('stock');
-        Schema::dropIfExists('branch');
-        Schema::dropIfExists('brand');
-        Schema::dropIfExists('cart');
-        Schema::dropIfExists('category');
-        Schema::dropIfExists('event');
-        Schema::dropIfExists('unit_type');
-        Schema::dropIfExists('invoice');
+        Schema::dropIfExists('stocks');
+        Schema::dropIfExists('branches');
+        Schema::dropIfExists('brands');
+        Schema::dropIfExists('carts');
+        Schema::dropIfExists('categories');
+        Schema::dropIfExists('events');
+        Schema::dropIfExists('unit_types');
+        Schema::dropIfExists('invoices');
+        Schema::dropIfExists('messages');
     }
 };
