@@ -13,9 +13,19 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->integer("usertype_id");
+            $table->integer("branch_id");
             $table->string('username')->unique();
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('phone');
+            $table->text('pic_url');
+            $table->timestamps();
+        });
+
+        Schema::create('user_types', function (Blueprint $table) {
+            $table->id();
+            $table->string('desc')->unique();
             $table->timestamps();
         });
     }
@@ -26,5 +36,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('users');
+        Schema::dropIfExists('user_types');
     }
 };
