@@ -108,6 +108,15 @@ return new class extends Migration
             $table->string('content');
             $table->timestamps();
         });
+
+        Schema::create('products', function (Blueprint $table) {
+            $table->id();
+            $table->integer('category_id');
+            $table->integer('unit_type_id');
+            $table->integer('brand_id');
+            $table->string('desc');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -127,5 +136,6 @@ return new class extends Migration
         Schema::dropIfExists('invoices');
         Schema::dropIfExists('messages');
         Schema::dropIfExists('notifications');
+        Schema::dropIfExists('products');
     }
 };
