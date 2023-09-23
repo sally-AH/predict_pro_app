@@ -117,6 +117,14 @@ return new class extends Migration
             $table->string('desc');
             $table->timestamps();
         });
+
+        Schema::create('parameters', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('value');
+            $table->timestamps();
+        });
+
     }
 
     /**
@@ -137,5 +145,7 @@ return new class extends Migration
         Schema::dropIfExists('messages');
         Schema::dropIfExists('notifications');
         Schema::dropIfExists('products');
+        Schema::dropIfExists('parameters');
+
     }
 };
