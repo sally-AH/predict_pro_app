@@ -102,6 +102,12 @@ return new class extends Migration
             $table->dateTime('date');
             $table->timestamps();
         });
+
+        Schema::create('notifications', function (Blueprint $table) {
+            $table->id();
+            $table->string('content');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -120,5 +126,6 @@ return new class extends Migration
         Schema::dropIfExists('unit_types');
         Schema::dropIfExists('invoices');
         Schema::dropIfExists('messages');
+        Schema::dropIfExists('notifications');
     }
 };
