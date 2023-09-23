@@ -5,6 +5,30 @@ class MyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Chat'),
+        leading: IconButton(
+          onPressed: (){
+            Navigator.pop(context);
+          },
+          icon: Icon(
+            Icons.arrow_back,
+            size: 20,
+            color: Colors.white,
+          ),
+        ),
+      ),
+      body: Container(
+        child: Column(
+          children: [
+            Expanded(
+                child: Messages()
+            ),
+            NewMessage(),
+          ],
+        ),
+      ),
+    );
   }
 }
