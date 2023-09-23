@@ -17,5 +17,20 @@ class Product extends Model
         return $this->belongsTo(Category::class, 'category_id');
     }
 
+    public function brand() {
+        return $this->belongsTo(Brand::class, 'brand_id');
+    }
+
+    public function unitType() {
+        return $this->belongsTo(UnitType::class, 'unit_type_id');
+    }
+
+    public function events() {
+        return $this->belongsToMany(Event::class);
+    }
+
+
+
+
 
 }

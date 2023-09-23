@@ -21,7 +21,10 @@ class Branch extends Model
         return $this->belongsTo(Region::class, 'region_id');
     }
 
-    
+    public function invoices() {
+        return $this->hasMany(Invoice::class, 'branch_id');
+    }
+
 
 
 

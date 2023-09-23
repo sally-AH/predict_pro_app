@@ -20,6 +20,15 @@ class User extends Authenticatable implements JWTSubject
         return $this->belongsTo(Branch::class, 'branch_id');
     }
 
+    public function sentMessages() {
+        return $this->hasMany(Message::class, 'sender_id', 'id');
+    }
+
+    public function receivedMessages() {
+        return $this->hasMany(Message::class, 'receiver_id', 'id');
+    }
+
+
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
