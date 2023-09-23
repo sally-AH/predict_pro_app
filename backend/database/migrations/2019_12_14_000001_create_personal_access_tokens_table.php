@@ -125,6 +125,11 @@ return new class extends Migration
             $table->timestamps();
         });
 
+        Schema::create('product_event', function (Blueprint $table) {
+            $table->integer('product_id');
+            $table->integer('event_id');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -146,6 +151,7 @@ return new class extends Migration
         Schema::dropIfExists('notifications');
         Schema::dropIfExists('products');
         Schema::dropIfExists('parameters');
+        Schema::dropIfExists('product_event');
 
     }
 };
