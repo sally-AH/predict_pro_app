@@ -86,6 +86,14 @@ return new class extends Migration
             $table->string('desc');
             $table->timestamps();
         });
+
+        Schema::create('invoice', function (Blueprint $table) {
+            $table->id();
+            $table->integer('branch_id');
+            $table->dateTime('date');
+            $table->double('total');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -102,5 +110,6 @@ return new class extends Migration
         Schema::dropIfExists('category');
         Schema::dropIfExists('event');
         Schema::dropIfExists('unit_type');
+        Schema::dropIfExists('invoice');
     }
 };
