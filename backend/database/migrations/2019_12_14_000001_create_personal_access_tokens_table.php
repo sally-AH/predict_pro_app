@@ -25,9 +25,21 @@ return new class extends Migration
 
         Schema::create('user_types', function (Blueprint $table) {
             $table->id();
-            $table->string('desc')->unique();
+            $table->string('desc');
             $table->timestamps();
         });
+
+        Schema::create('stock', function (Blueprint $table) {
+            $table->id();
+            $table->integer("branch_id");
+            $table->integer("product_id");
+            $table->double("total_quantity");
+            $table->double("unit_price");
+            $table->double("remaining_quantity");
+            $table->dateTime('in_date');
+            $table->timestamps();
+        });
+
     }
 
     /**
@@ -37,5 +49,6 @@ return new class extends Migration
     {
         Schema::dropIfExists('users');
         Schema::dropIfExists('user_types');
+        Schema::dropIfExists('stock');
     }
 };
