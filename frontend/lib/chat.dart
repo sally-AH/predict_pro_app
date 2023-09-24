@@ -1,9 +1,18 @@
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:predict_pro/chat/messages.dart';
 import 'package:predict_pro/chat/new_message.dart';
 
-class ChatPage extends StatelessWidget {
+
+class ChatPage extends StatefulWidget {
   const ChatPage({super.key});
+
+
+  @override
+  State<ChatPage> createState() => _ChatPageState();
+}
+
+class _ChatPageState extends State<ChatPage> {
 
   @override
   Widget build(BuildContext context) {
@@ -34,4 +43,5 @@ class ChatPage extends StatelessWidget {
     );
   }
 }
+
 
