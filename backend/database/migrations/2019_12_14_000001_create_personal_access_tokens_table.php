@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('phone');
-            $table->text('pic_url');
+            $table->text('pic_url')->default('https://picsum.photos/200');
+            $table->boolean("is_active")->default(false);
             $table->timestamps();
         });
 
