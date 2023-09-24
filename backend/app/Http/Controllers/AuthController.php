@@ -46,22 +46,22 @@ class AuthController extends Controller
         ], 200);
     }
 
-    public function register(Request $request)
-    {
+    public function register(Request $request) {
         $request->validate([
-            // 'first_name' => 'required|string|max:255',
-            // 'last_name' => 'required|string|max:255',
             'username' => 'required|string|max:255|unique:users',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6',
         ]);
 
         $user = new User();
-        // $user->first_name = $request->first_name;
-        // $user->last_name = $request->last_name;
+        $user->usertype_id = $request->usertype_id;
+        $user->branch_id = $request->branch_id;
         $user->username = $request->username;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
+        $user->phone = $request->phone;
+        $user->pic_url = $request->pic_url;
+        $user->is_active = $request->is_active;
         $user->save();
 
         $token = Auth::login($user);
@@ -73,8 +73,7 @@ class AuthController extends Controller
         ], 200);
     }
 
-    public function logout()
-    {
+    public function logout() {
         Auth::logout();
         return response()->json([
             'status' => 'success',
@@ -82,8 +81,7 @@ class AuthController extends Controller
         ], 200);
     }
 
-    public function refresh()
-    {
+    public function refresh() {
         $user = Auth::user();
         $user->token = Auth::refresh();
 
