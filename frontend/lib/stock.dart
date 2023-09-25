@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_launcher_icons/xml_templates.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
@@ -12,12 +13,21 @@ class StockPage extends StatefulWidget {
 }
 
 class _StockPageState extends State<StockPage> {
+  List categories =[];
   @override
   void initState() {
     super.initState();
     final Uri url = Uri.parse("http://192.168.0.104:8000/api/getcategories");
-    http.get(url,).then((value) {
-      print(value.body);
+    dynamic jsonRes={};
+    http.get(url).then((value) {
+      jsonRes = jsonDecode(value.body);
+      print(jsonRes);
+      setState(() {
+        categories = jsonRes;
+        print("wwwwwwwwwwwwwwwwwww");
+        print(jsonRes);
+        print(categories);
+      });
     });
   }
 
@@ -40,24 +50,38 @@ class _StockPageState extends State<StockPage> {
       ),
       body: Container(
         child: ListView.builder(
-            itemCount: 20,
+            itemCount: categories.length, //categories.length
             itemBuilder: (ctx, index) {
               return Container(
+                margin: EdgeInsets.only(top: 15, right: 15,bottom: 10, left: 15),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Color.fromRGBO(244, 244, 244, 100),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 3,
+                        blurRadius: 5,
+                      ),
+                    ],
+                ),
+
+
+
                 child: ListTile(
                   onTap: () {
-                    Navigator.push(context,
+                    Navigator.push(
+                        context,
                         MaterialPageRoute(builder: (context) => StockPage()));
                   },
-                  title: Text("Product Name"),
+                  title: Text("Product Name"), //Text(categories[i][''desc'])
                   leading: CircleAvatar(
                     backgroundImage:
                         NetworkImage("https://picsum.photos/200/300"),
+                    //
                   ),
                 ),
-                decoration: BoxDecoration(
-                    border: Border(
-                        bottom:
-                            BorderSide(width: 1, color: Color(0xffe5e5e5)))),
+
               );
             }),
       ),

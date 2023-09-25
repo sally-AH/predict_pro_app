@@ -33,12 +33,12 @@ Future<void> main() async{
   runApp(
       const MaterialApp(
         debugShowCheckedModeBanner: false,
-        // home: StockPage(),
+         home: StockPage(),
         // home: ChatPage(),
         // home: HomePage(),
         // home: Contacts(),
         // home: SideMenu(),
-        home: Dashboard(),
+        //home: Dashboard(),
       )
   );
 }
@@ -47,12 +47,12 @@ Future<void> main() async{
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-  void _loadUserInfo() async {
-    String token = await getToken();
-    if(token == ""){
-      // Navigator.of(context as BuildContext).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=>Login()), (route)=> false);
-    }
-  }
+  // void _loadUserInfo() async {
+  //   String token = await getToken();
+  //   if(token == ""){
+  //     // Navigator.of(context as BuildContext).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=>Login()), (route)=> false);
+  //   }
+  // }
 
 
   @override
