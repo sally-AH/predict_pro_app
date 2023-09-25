@@ -44,6 +44,7 @@ dependencies:
   rive: ^0.11.17
   firebase_messaging: ^14.6.8
   firebase_storage: ^11.2.7
+  flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
   flutter_test:
@@ -60,6 +61,11 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter packages.
+
+flutter_icons:
+  android: true
+  image_path: "assets/logo.png"
+
 flutter:
 
   # The following line ensures that the Material Icons font is

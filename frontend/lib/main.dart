@@ -30,7 +30,7 @@ Future<void> main() async{
 
 
   runApp(
-      MaterialApp(
+      const MaterialApp(
         debugShowCheckedModeBanner: false,
         // home: ChatMain(),
         // home: ChatPage(),
@@ -44,12 +44,15 @@ Future<void> main() async{
 
 
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   void _loadUserInfo() async {
     String token = await getToken();
     if(token == ""){
       // Navigator.of(context as BuildContext).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=>Login()), (route)=> false);
     }
   }
+
 
   @override
   Widget build(BuildContext context) {
