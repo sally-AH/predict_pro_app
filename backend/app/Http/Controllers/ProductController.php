@@ -38,4 +38,3 @@ class ProductController extends Controller {
     }
 
 }
-

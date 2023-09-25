@@ -3,9 +3,12 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 
+
+Route::get('getcategories', [CategoryController::class, "getAllCategories"]);
 Route::group(["prefix" => "guest"], function(){
     Route::get("unauthorized", [AuthController::class, "unauthorized"])->name("unauthorized");
     Route::post("login", [AuthController::class, "login"]);
@@ -18,5 +21,6 @@ Route::group(["middleware" => "auth:api"], function(){
         Route::post("refresh", [AuthController::class, "refresh"]);
         Route::get('getusers', [UserController::class, "getUsersByBranch"]);
         Route::get('getproducts', [ProductController::class, "getProductsInStockByBranch"]);
+        
     });
 });
