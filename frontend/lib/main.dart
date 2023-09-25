@@ -11,6 +11,7 @@ import 'package:predict_pro/services/user_service.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:predict_pro/firebase_options.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:predict_pro/stock.dart';
 
 
 Future<void> main() async{
@@ -32,7 +33,7 @@ Future<void> main() async{
   runApp(
       const MaterialApp(
         debugShowCheckedModeBanner: false,
-        // home: ChatMain(),
+        // home: StockPage(),
         // home: ChatPage(),
         // home: HomePage(),
         // home: Contacts(),
