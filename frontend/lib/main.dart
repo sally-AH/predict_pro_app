@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:predict_pro/contacts.dart';
 import 'package:predict_pro/dashboard.dart';
 import 'package:predict_pro/firebase_api.dart';
+import 'package:predict_pro/item.dart';
 import 'package:predict_pro/login.dart';
 import 'package:predict_pro/menu/side_menu.dart';
 import 'package:predict_pro/signup.dart';
@@ -33,7 +34,8 @@ Future<void> main() async{
   runApp(
       const MaterialApp(
         debugShowCheckedModeBanner: false,
-         home: StockPage(),
+         // home: StockPage(),
+        home: ItemPage(),
         // home: ChatPage(),
         // home: HomePage(),
         // home: Contacts(),
