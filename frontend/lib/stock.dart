@@ -5,6 +5,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
+import 'Models/category_model.dart';
+
 class StockPage extends StatefulWidget {
   const StockPage({super.key});
 
@@ -13,7 +15,7 @@ class StockPage extends StatefulWidget {
 }
 
 class _StockPageState extends State<StockPage> {
-  List categories =[];
+  List <Category> categories =[];
   @override
   void initState() {
     super.initState();
@@ -21,12 +23,13 @@ class _StockPageState extends State<StockPage> {
     dynamic jsonRes={};
     http.get(url).then((value) {
       jsonRes = jsonDecode(value.body);
-      print(jsonRes);
+      jsonRes.forEach((item){
+        Category cat = Category.fromJson(item);
+        categories.add(cat);
+      });
       setState(() {
-        categories = jsonRes;
-        print("wwwwwwwwwwwwwwwwwww");
+        categories;
         print(jsonRes);
-        print(categories);
       });
     });
   }
@@ -79,7 +82,7 @@ class _StockPageState extends State<StockPage> {
                     radius: 30,
                     backgroundColor: Colors.blue,
                     child: Text(
-                        categories[index]['desc'][0].toUpperCase(),
+                        categories[index].desc[0].toUpperCase(),
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 20
@@ -90,7 +93,7 @@ class _StockPageState extends State<StockPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                          categories[index]['desc'],
+                          categories[index].desc,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18,
