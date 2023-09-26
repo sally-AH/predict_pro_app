@@ -33,9 +33,9 @@ Future<void> main() async{
   runApp(
       const MaterialApp(
         debugShowCheckedModeBanner: false,
-         home: StockPage(),
+         // home: StockPage(),
         // home: ChatPage(),
-        // home: HomePage(),
+        home: HomePage(),
         // home: Contacts(),
         // home: SideMenu(),
         //home: Dashboard(),

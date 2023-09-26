@@ -54,6 +54,7 @@ class _StockPageState extends State<StockPage> {
             itemBuilder: (ctx, index) {
               return Container(
                 margin: EdgeInsets.only(top: 15, right: 15,bottom: 10, left: 15),
+                padding: EdgeInsets.symmetric(vertical: 12),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: Color.fromRGBO(244, 244, 244, 100),
@@ -74,11 +75,28 @@ class _StockPageState extends State<StockPage> {
                         context,
                         MaterialPageRoute(builder: (context) => StockPage()));
                   },
-                  title: Text("Product Name"), //Text(categories[i][''desc'])
                   leading: CircleAvatar(
-                    backgroundImage:
-                        NetworkImage("https://picsum.photos/200/300"),
-                    //
+                    radius: 30,
+                    backgroundColor: Colors.blue,
+                    child: Text(
+                        categories[index]['desc'][0].toUpperCase(),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20
+                      ),
+                    ),
+                  ),
+                  title: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                          categories[index]['desc'],
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
 
