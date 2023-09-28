@@ -1,13 +1,13 @@
 import 'package:predict_pro/config/request.dart';
 import 'package:predict_pro/services/remote_services/category_service.dart';
 import 'package:predict_pro/Models/category_model.dart';
-import 'package:predict_pro/stock.dart';
+// import 'package:predict_pro/stock.dart';
 
 class CategoriesServiceImp implements CategoriesService {
   @override
-  Future <List<StockPage>?> getCategories() async {
+  Future <List<Category>?> getCategories() async {
     try{
-      final categoryList = await sendRequest(route: "http://192.168.0.104:8000/api/getcategories");
+      final categoryList = await sendRequest(route: "getcategories");
       List<Category> list=[];
       categoryList.forEach((category){
         Category cat = Category.fromJson(category);
