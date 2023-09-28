@@ -5,6 +5,7 @@ import 'package:predict_pro/firebase_api.dart';
 import 'package:predict_pro/item.dart';
 import 'package:predict_pro/login.dart';
 import 'package:predict_pro/menu/side_menu.dart';
+import 'package:predict_pro/services/local_services/providers/items_provider.dart';
 import 'package:predict_pro/signup.dart';
 import 'package:predict_pro/chat.dart';
 import 'package:predict_pro/services/user_service.dart';
@@ -28,13 +29,15 @@ Future<void> main() async{
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (ctx)=> CategoriesProvider(categories: [])),
+        ChangeNotifierProvider(create: (ctx)=> ItemsProvider(items: [])),
+
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: StockPage(),
+        // home: StockPage(),
         // home: ItemPage(),
         // home: ChatPage(),
-        // home: HomePage(),
+        home: HomePage(),
         // home: Contacts(),
         // home: SideMenu(),
         //home: Dashboard(),

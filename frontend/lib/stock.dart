@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_launcher_icons/xml_templates.dart';
 import 'package:http/http.dart' as http;
 import 'package:predict_pro/item.dart';
+import 'package:predict_pro/services/local_services/providers/items_provider.dart';
 import 'package:predict_pro/services/remote_services/categories_service_imp.dart';
 import 'package:predict_pro/services/remote_services/category_service.dart';
 import 'package:predict_pro/services/remote_services/items_service_imp.dart';
@@ -23,15 +24,23 @@ class StockPage extends StatefulWidget {
 
 class _StockPageState extends State<StockPage> {
   List<Category> categories = [];
-
+  List<Item> items = [];
   CategoriesService categoriesService = CategoriesServiceImp();
+  ItemsService itemsService = ItemsServiceImp();
+
   @override
   void initState() {
     super.initState();
     categoriesService.getCategories().then((categories){
-    Provider.of<CategoriesProvider>(context, listen: false).saveCategories(categories ?? []);
-
+      Provider.of<CategoriesProvider>(context, listen: false).saveCategories(categories ?? []);
     });
+
+    itemsService.getItems().then((items) {
+      Provider.of<ItemsProvider>(context, listen: false).saveItems(items ?? []);
+      Provider.of<CategoriesProvider>(context, listen: false).fillItems(items ?? []);
+    });
+
+
 
   }
 
@@ -78,7 +87,7 @@ class _StockPageState extends State<StockPage> {
                     ),
                     child: ListTile(
                       onTap: () {
-                        Navigator.of(context).pushNamed("/item");
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> ItemPage()));
                       },
                       leading: CircleAvatar(
                         radius: 30,
