@@ -8,6 +8,10 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 
 
+
+Route::get("prompt",[OpenAiController::class, 'prompt']);
+Route::get('getusers', [UserController::class, "getAllUsers"]);
+Route::get('getCategorProducts', [ProductController::class, "getProductsByCategoryAndBranch"]);
 Route::get('getcategories', [CategoryController::class, "getAllCategories"]);
 Route::group(["prefix" => "guest"], function(){
     Route::get("unauthorized", [AuthController::class, "unauthorized"])->name("unauthorized");
@@ -21,6 +25,6 @@ Route::group(["middleware" => "auth:api"], function(){
         Route::post("refresh", [AuthController::class, "refresh"]);
         Route::get('getusers', [UserController::class, "getUsersByBranch"]);
         Route::get('getproducts', [ProductController::class, "getProductsInStockByBranch"]);
-        
+
     });
 });
