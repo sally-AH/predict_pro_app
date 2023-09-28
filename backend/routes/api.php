@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\OpenAiController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 
@@ -11,8 +12,9 @@ use App\Http\Controllers\UserController;
 
 Route::get("prompt",[OpenAiController::class, 'prompt']);
 Route::get('getusers', [UserController::class, "getAllUsers"]);
-Route::get('getCategorProducts', [ProductController::class, "getProductsByCategoryAndBranch"]);
+Route::get('getCategoryProducts', [ProductController::class, "getProductsByCategoryAndBranch"]);
 Route::get('getcategories', [CategoryController::class, "getAllCategories"]);
+
 Route::group(["prefix" => "guest"], function(){
     Route::get("unauthorized", [AuthController::class, "unauthorized"])->name("unauthorized");
     Route::post("login", [AuthController::class, "login"]);
