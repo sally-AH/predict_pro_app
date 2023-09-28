@@ -13,6 +13,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:predict_pro/firebase_options.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:predict_pro/stock.dart';
+import 'package:provider/provider.dart';
+import 'package:predict_pro/services/local_services/providers/categories_provider.dart';
 
 
 Future<void> main() async{
@@ -21,20 +23,15 @@ Future<void> main() async{
   await FirebaseApi().initNotifications();
 
 
-  // FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-  //   print('Got a message whilst in the foreground!');
-  //   print('Message data: ${message.data}');
-  //
-  //   if (message.notification != null) {
-  //     print('Message also contained a notification: ${message.notification}');
-  //   }
-  // });
-
 
   runApp(
-       MaterialApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (ctx)=> CategoriesProvider(categories: [])),
+      ],
+      child: MaterialApp(
         debugShowCheckedModeBanner: false,
-         home: StockPage(),
+        home: StockPage(),
         // home: ItemPage(),
         // home: ChatPage(),
         // home: HomePage(),
@@ -44,20 +41,14 @@ Future<void> main() async{
         routes: {
           "/items": (context) =>  ItemPage(),
         },
-      )
+      ),
+    )
   );
 }
 
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
-
-  // void _loadUserInfo() async {
-  //   String token = await getToken();
-  //   if(token == ""){
-  //     // Navigator.of(context as BuildContext).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=>Login()), (route)=> false);
-  //   }
-  // }
 
 
   @override

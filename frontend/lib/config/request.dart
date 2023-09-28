@@ -16,7 +16,7 @@ Future sendRequest({String method="GET", required String route, Map? data}) asyn
   }catch(error){
     throw error;
   }
-
-  return jsonDecode(response);
+  final jsonRes = jsonDecode(response.body);
+  return jsonRes;
 
 }
