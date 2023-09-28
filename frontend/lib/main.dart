@@ -32,15 +32,18 @@ Future<void> main() async{
 
 
   runApp(
-      const MaterialApp(
+       MaterialApp(
         debugShowCheckedModeBanner: false,
-         // home: StockPage(),
-        home: ItemPage(),
+         home: StockPage(),
+        // home: ItemPage(),
         // home: ChatPage(),
         // home: HomePage(),
         // home: Contacts(),
         // home: SideMenu(),
         //home: Dashboard(),
+        routes: {
+          "/items": (context) =>  ItemPage(),
+        },
       )
   );
 }

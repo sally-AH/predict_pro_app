@@ -4,6 +4,8 @@ import 'package:predict_pro/contacts.dart';
 import 'package:predict_pro/dashboard.dart';
 import 'package:predict_pro/signup.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+
+
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 

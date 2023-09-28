@@ -8,7 +8,6 @@ import 'dart:io';
 import 'Models/category_model.dart';
 import 'Models/item_model.dart';
 
-
 class ItemPage extends StatefulWidget {
   const ItemPage({super.key});
 
@@ -17,25 +16,24 @@ class ItemPage extends StatefulWidget {
 }
 
 class _ItemPageState extends State<ItemPage> {
-  List <Item> items =[];
+  List<Item> items = [];
   @override
   void initState() {
     super.initState();
-    final Uri url = Uri.parse("http://192.168.0.104:8000/api/getCategorProducts");
-    dynamic jsonRes={};
+    final Uri url =
+        Uri.parse("http://192.168.0.104:8000/api/getCategorProducts");
+    dynamic jsonRes = {};
     http.get(url).then((value) {
       jsonRes = jsonDecode(value.body);
-      jsonRes.forEach((itm){
+      jsonRes.forEach((itm) {
         Item i = Item.fromJson(itm);
         items.add(i);
       });
       setState(() {
-        items;
+        items = (ModalRoute.of(context)!.settings.arguments! as Map)["items"];
         print(jsonRes);
-      });
-    });
+      });    });
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +41,7 @@ class _ItemPageState extends State<ItemPage> {
       appBar: AppBar(
         title: const Text("Items"),
         leading: IconButton(
-          onPressed: (){
+          onPressed: () {
             Navigator.pop(context);
           },
           icon: Icon(
@@ -54,13 +52,13 @@ class _ItemPageState extends State<ItemPage> {
         ),
         centerTitle: true,
       ),
-
       body: Container(
         child: ListView.builder(
-            itemCount: items.length, //categories.length
+            itemCount: 20, // items.length
             itemBuilder: (ctx, index) {
               return Container(
-                margin: EdgeInsets.only(top: 15, right: 15,bottom: 10, left: 15),
+                margin:
+                    EdgeInsets.only(top: 15, right: 15, bottom: 10, left: 15),
                 padding: EdgeInsets.symmetric(vertical: 12),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
@@ -73,31 +71,24 @@ class _ItemPageState extends State<ItemPage> {
                     ),
                   ],
                 ),
-
-
-
                 child: ListTile(
                   onTap: () {
-                    Navigator.push(
-                        context,
+                    Navigator.push(context,
                         MaterialPageRoute(builder: (context) => ItemPage()));
                   },
                   leading: CircleAvatar(
                     radius: 30,
                     backgroundColor: Colors.blue,
                     child: Text(
-                      items[index].desc[0].toUpperCase(),
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20
-                      ),
+                      "F", //items[index].desc[0].toUpperCase()
+                      style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
                   ),
                   title: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        items[index].desc,
+                        "items[index].desc",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18,
@@ -106,7 +97,6 @@ class _ItemPageState extends State<ItemPage> {
                     ],
                   ),
                 ),
-
               );
             }),
       ),
