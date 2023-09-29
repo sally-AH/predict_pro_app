@@ -2,6 +2,7 @@ import 'package:predict_pro/chat.dart';
 import 'package:predict_pro/chat_main.dart';
 import 'package:predict_pro/contacts.dart';
 import 'package:predict_pro/dashboard.dart';
+import 'package:predict_pro/main.dart';
 import 'package:predict_pro/stock.dart';
 import 'package:rive/rive.dart';
 
@@ -37,6 +38,6 @@ List<RiveAsset> sideMenu= [
   RiveAsset("assets/RiveAssets/iconss.riv", artboard: "USER", stateMachineName: "USER_Interactivity", title: "Profile", nav: Dashboard()),
   RiveAsset("assets/RiveAssets/iconss.riv", artboard: "BELL", stateMachineName: "BELL_Interactivity", title: "Notification", nav: Dashboard()),
   RiveAsset("assets/RiveAssets/iconss.riv", artboard: "SETTINGS", stateMachineName: "SETTINGS_Interactivity", title: "Settings", nav: Dashboard()),
-  RiveAsset("assets/RiveAssets/iconss.riv", artboard: "EXIT", stateMachineName: "state_machine", title: "Logout", nav: Dashboard()),
+  RiveAsset("assets/RiveAssets/iconss.riv", artboard: "EXIT", stateMachineName: "state_machine", title: "Logout", nav: HomePage()),
 
 ];
