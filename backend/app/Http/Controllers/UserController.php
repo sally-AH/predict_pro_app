@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\Models\Branch;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Services\FCMService;
+
 
 class UserController extends Controller {
 
@@ -19,5 +21,25 @@ class UserController extends Controller {
     public function getAllUsers() {
         $users = User::all();
         return response()->json(['users' => $users]);
+    }
+
+    public function sendNotificationrToUser(Request $request)
+    {
+       
+       $user = $request->token;
+
+      FCMService::send(
+          $user,
+          [
+              'title' => 'hey there beautiful',
+              'body' => 'your body is tired',
+          ]
+      );
+
+      return response()->json([
+        'status' => 'success',
+        'user' => $user
+      ]);
+
     }
 }
