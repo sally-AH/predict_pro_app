@@ -1,0 +1,13 @@
+<?php
+
+namespace App\Http\Controllers;
+use App\Models\Cart;
+use Illuminate\Http\Request;
+
+class CartController extends Controller
+{
+    public function getAllCartsWithDetails() {
+    $carts = Cart::with('invoice', 'product')->get();
+    return response()->json(['carts' => $carts]);
+}
+}

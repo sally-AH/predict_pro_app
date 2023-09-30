@@ -3,13 +3,15 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\OpenAiController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 
-
-
+Route::get('getAllCartsWithDetails', [CartController::class, "getAllCartsWithDetails"]);
+Route::get('getAllInvoices', [InvoiceController::class, "getAllInvoices"]);
 Route::get("prompt",[OpenAiController::class, 'prompt']);
 Route::get('getusers', [UserController::class, "getAllUsers"]);
 Route::get('getCategoryProducts', [ProductController::class, "getProductsByCategoryAndBranch"]);

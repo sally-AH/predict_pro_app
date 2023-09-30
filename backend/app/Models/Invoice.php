@@ -13,4 +13,8 @@ class Invoice extends Model
         return $this->belongsTo(Branch::class, 'branch_id');
     }
 
+    public function carts() {
+        return $this->hasMany(Cart::class, 'invoice_id');
+    }
+
 }
