@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class CartController extends Controller
 {
     public function getAllCartsWithDetails() {
-    $carts = Cart::with('invoice', 'product')->get();
-    return response()->json(['carts' => $carts]);
-}
+        $carts = Cart::with(['invoice.branch', 'product.brand'])->get();
+        return response()->json(['carts' => $carts]);
+    }
 }

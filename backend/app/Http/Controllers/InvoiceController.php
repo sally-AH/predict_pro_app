@@ -11,4 +11,17 @@ class InvoiceController extends Controller
         $invoices = Invoice::all();
         return response()->json(['invoices' => $invoices]);
     }
+
+    public function getInvoicesWithProductDetails() {
+        $invoices = Invoice::with([
+            'branch:id,desc',
+            'carts' => function ($query) {
+                $query->with([
+                    'product:id,desc',
+                ])->select('invoice_id', 'quantity', 'net', 'total', 'product_id');
+            }
+        ])->select('id', 'date', 'total')->get();
+    
+        return response()->json(['invoices' => $invoices]);
+    }
 }

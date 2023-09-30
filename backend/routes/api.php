@@ -10,6 +10,8 @@ use App\Http\Controllers\OpenAiController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 
+
+Route::get('getInvoicesWithProductDetails', [InvoiceController::class, "getInvoicesWithProductDetails"]);
 Route::get('getAllCartsWithDetails', [CartController::class, "getAllCartsWithDetails"]);
 Route::get('getAllInvoices', [InvoiceController::class, "getAllInvoices"]);
 Route::get("prompt",[OpenAiController::class, 'prompt']);
