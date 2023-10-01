@@ -37,10 +37,10 @@ Future<void> main() async{
         // home: StockPage(),
         // home: ItemPage(),
         // home: ChatPage(),
-        home: HomePage(),
+        // home: HomePage(),
         // home: Contacts(),
         // home: SideMenu(),
-        //home: Dashboard(),
+        home: Dashboard(),
         routes: {
           "/items": (context) =>  ItemPage(),
         },
