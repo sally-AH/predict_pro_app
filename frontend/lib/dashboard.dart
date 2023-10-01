@@ -1,13 +1,11 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:predict_pro/menu/side_menu.dart';
-import 'package:predict_pro/models/rive_asset.dart';
-import 'package:predict_pro/rive_utils.dart';
 import 'package:rive/rive.dart';
-import 'package:fl_chart/fl_chart.dart';
-// import 'package:fl_animated_linechart/fl_animated_linechart.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-// import 'package:syncfusion_flutter_charts/sparkcharts.dart';
+import 'package:predict_pro/config/request.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -18,6 +16,8 @@ class Dashboard extends StatefulWidget {
 
 class _DashboardState extends State<Dashboard> {
   late SMIBool isMenuClosed;
+
+  dynamic data = getData();
   final List<SalesData> charData = [
     SalesData(2019, 34000, Colors.red),
     SalesData(2020, 35000, Colors.blue),
@@ -110,7 +110,15 @@ class _DashboardState extends State<Dashboard> {
     );
   }
 }
-
+Future getData () async {
+  try{
+    final response = await sendRequest(route: "prompt");
+    print(response);
+    // return jsonDecode(response) ;
+  }catch(e){
+    return e.toString();
+  }
+}
 class SalesData {
   final int year;
   final double sales;
