@@ -7,6 +7,7 @@ import 'package:rive/rive.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:predict_pro/config/request.dart';
 
+
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
 
@@ -45,6 +46,7 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).backgroundColor,
       resizeToAvoidBottomInset: false,
       extendBody: true,
       drawer: SideMenu(),
@@ -119,6 +121,7 @@ Future getData () async {
     return e.toString();
   }
 }
+
 class SalesData {
   final int year;
   final double sales;

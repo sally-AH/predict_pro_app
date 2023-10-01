@@ -1,4 +1,8 @@
+
+
 import 'package:flutter/material.dart';
+import 'package:predict_pro/config/themes/dark_theme.dart';
+import 'package:predict_pro/config/themes/light_theme.dart';
 import 'package:predict_pro/contacts.dart';
 import 'package:predict_pro/dashboard.dart';
 import 'package:predict_pro/firebase_api.dart';
@@ -6,6 +10,8 @@ import 'package:predict_pro/item.dart';
 import 'package:predict_pro/login.dart';
 import 'package:predict_pro/menu/side_menu.dart';
 import 'package:predict_pro/services/local_services/providers/items_provider.dart';
+import 'package:predict_pro/services/local_services/providers/categories_provider.dart';
+import 'package:predict_pro/services/local_services/providers/setting_provider.dart';
 import 'package:predict_pro/signup.dart';
 import 'package:predict_pro/chat.dart';
 import 'package:predict_pro/services/user_service.dart';
@@ -15,47 +21,62 @@ import 'package:predict_pro/firebase_options.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:predict_pro/stock.dart';
 import 'package:provider/provider.dart';
-import 'package:predict_pro/services/local_services/providers/categories_provider.dart';
+
 
 
 Future<void> main() async{
+
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  await FirebaseApi().initNotifications();
-
-
+  FirebaseApi().initNotifications();
 
   runApp(
-    MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (ctx)=> CategoriesProvider(categories: [])),
-        ChangeNotifierProvider(create: (ctx)=> ItemsProvider(items: [])),
-
-      ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        // home: StockPage(),
-        // home: ItemPage(),
-        // home: ChatPage(),
-        // home: HomePage(),
-        // home: Contacts(),
-        // home: SideMenu(),
-        home: Dashboard(),
-        routes: {
-          "/items": (context) =>  ItemPage(),
-        },
-      ),
-    )
+      MultiProvider(
+          providers: [
+            ChangeNotifierProvider(create: (ctx)=> CategoriesProvider(categories: [])),
+            ChangeNotifierProvider(create: (ctx)=> ItemsProvider(items: [])),
+            ChangeNotifierProvider(create: (ctx)=> SettingProvider(darkMode:false, allowNot:false))
+          ],
+          child: MyApp(),
+      )
   );
 }
 
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  // @override
+  // initState () {
+  //   // goint to read allowNotifi
+  //   FirebaseApi().initNotifications();
+  // }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Dashboard(),
+        theme: Provider.of<SettingProvider>(context).darkMode? darkTheme : lightTheme,
+        routes: {
+          "/items": (context) =>  ItemPage(),
+        },
+      );
+  }
+}
+
+// another file
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: SafeArea(
         child: Container(

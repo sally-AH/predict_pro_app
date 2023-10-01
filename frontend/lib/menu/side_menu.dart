@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:predict_pro/dashboard.dart';
 import 'package:predict_pro/rive_utils.dart';
+import 'package:predict_pro/services/local_services/providers/setting_provider.dart';
+import 'package:provider/provider.dart';
 import 'package:rive/rive.dart';
 import '../models/rive_asset.dart';
 
@@ -14,8 +16,18 @@ class SideMenu extends StatefulWidget {
 
 class _SideMenuState extends State<SideMenu> {
   RiveAsset selectedMenu = sideMenu.first;
+  bool darkMode = false;
+  @override
+  void initState() {
+    super.initState();
+    setState(() {
+
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    darkMode = Provider.of<SettingProvider>(context).darkMode;
     return Drawer(
       child: SafeArea(
         child: Container(
@@ -61,6 +73,12 @@ class _SideMenuState extends State<SideMenu> {
                     },
                     isActive: selectedMenu == menu,
                   ),
+                ),
+                Switch(
+                    value: darkMode,
+                    onChanged: (value){
+                      Provider.of<SettingProvider>(context).toggleTheme(value);
+                    }
                 ),
               ],
             ),
