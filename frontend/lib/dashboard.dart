@@ -82,7 +82,25 @@ class _DashboardState extends State<Dashboard> {
                 ],
 
               ),
+              SfCircularChart(
+                title: ChartTitle(text: 'Monthly Sales'),
+                legend: Legend(isVisible: true),
+                series: [
+                  PieSeries<PieData, dynamic>(
+                      enableTooltip: true,
+                      explode: true,
+                      explodeAll: true,
+                      radius: '100',
+                      dataSource: pieCharData,
+                      xValueMapper: (PieData data, _)=>data.month,
+                      yValueMapper: (PieData data, _)=>data.sales,
+                      dataLabelSettings: DataLabelSettings(
+                        isVisible: true,
+                      )
+                  ),
 
+                ],
+              ),
             ],
           ),
 
