@@ -53,7 +53,10 @@ const User = () => {
           "& .MuiDataGrid-virtualScroller": {
             backgroundColor: colors.black[400],
           },
-
+          "& .MuiDataGrid-footerContainer": {
+            borderTop: "none",
+            backgroundColor: colors.blue[700],
+          },
           "& .MuiCheckbox-root": {
             color: `${colors.green[200]} !important`,
           },
