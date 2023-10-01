@@ -1,7 +1,7 @@
 
 
-const Sidebar = ()=>{
-    return <div>Sidebar</div>
+const Topbar = ()=>{
+    return <div>Topbar</div>
 }
 
-export default Sidebar
+export default Topbar
