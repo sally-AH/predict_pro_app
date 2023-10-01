@@ -117,5 +117,33 @@ export const tokens = (mode) => ({
     }
     )
 
-})
+});
+
+export const themeSettings = (mode) => {
+    const colors = tokens(mode);
+    return {
+        palette: {
+            mode: mode,
+            ...(mode === 'dark'? {
+                primary:{
+                    main: colors.black[500],
+                },
+                secondary: {
+                    main: colors.green[500],
+                },
+                neutral: {
+                    dark: colors.black[700],
+                    main: colors.grey[500],
+                    light: colors.black[100],
+                },
+                background: {
+                    default: colors.black[500],
+                }
+            }:{
+                
+            }
+            )
+        }
+    }
+}
 
