@@ -140,7 +140,20 @@ export const themeSettings = (mode) => {
                     default: colors.black[500],
                 }
             }:{
-                
+                primary:{
+                    main: colors.black[100],
+                },
+                secondary: {
+                    main: colors.green[500],
+                },
+                neutral: {
+                    dark: colors.black[700],
+                    main: colors.grey[500],
+                    light: colors.black[100],
+                },
+                background: {
+                    default: "#fcfcfc",
+                }
             }
             )
         }
