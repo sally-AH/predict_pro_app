@@ -5,6 +5,9 @@ import Sidebar from "./scenes/global/sidebar";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
 import Dashboard  from "./scenes/dashboard";
+import User from "./scenes/users";
+
+
 function App() {
   const [theme, colorMode] = useMode();
   const [isSidebar, setIsSidebar] = useState(true);
@@ -19,7 +22,7 @@ function App() {
             <Topbar setIsSidebar={setIsSidebar} />
             <Routes>
               <Route path="/" element={<Dashboard/>} />
-
+              <Route path="/users" element={<User/>} />
             </Routes>
           </main>
         </div>
