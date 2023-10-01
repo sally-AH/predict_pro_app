@@ -26,8 +26,27 @@ const Sidebar = ()=>{
 
 
     return (
-        <Box>
-            
+        <Box sx={{
+            "& .pro-sidebar-inner": {
+              background: `${colors.black[400]} !important`,
+            },
+            "& .pro-icon-wrapper": {
+              backgroundColor: "transparent !important",
+            },
+            "& .pro-inner-item": {
+              padding: "5px 35px 5px 20px !important",
+            },
+            "& .pro-inner-item:hover": {
+              color: "#868dfb !important",
+            },
+            "& .pro-menu-item.active": {
+              color: "#6870fa !important",
+            },
+          }}
+        >
+        <ProSidebar collapsed={isCollapsed}>
+
+        </ProSidebar>
         </Box>
     );
 };
