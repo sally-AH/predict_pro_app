@@ -25,6 +25,13 @@ Route::group(["prefix" => "guest"], function(){
     Route::post("register", [AuthController::class, "register"]);
 });
 
+
+Route::group(["middleware" => "auth:api"], function(){
+    Route::group(["prefix" => "admin"], function(){
+        
+    });
+});
+
 Route::group(["middleware" => "auth:api"], function(){
     Route::group(["prefix" => "user"], function(){
         Route::post("logout", [AuthController::class, "logout"]);
