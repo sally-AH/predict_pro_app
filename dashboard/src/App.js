@@ -4,7 +4,7 @@ import Topbar from "./scenes/global/topbar";
 import Sidebar from "./scenes/global/sidebar";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
-
+import Dashboard  from "./scenes/dashboard";
 function App() {
   const [theme, colorMode] = useMode();
   const [isSidebar, setIsSidebar] = useState(true);
@@ -18,7 +18,7 @@ function App() {
           <main className="content">
             <Topbar setIsSidebar={setIsSidebar} />
             <Routes>
-              <Route path="/"  />
+              <Route path="/" element={<Dashboard/>} />
 
             </Routes>
           </main>
