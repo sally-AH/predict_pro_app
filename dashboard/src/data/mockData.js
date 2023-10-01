@@ -1,6 +1,6 @@
 import { tokens } from "../theme";
 
-export const mockDataTeam = [
+const mockDataTeam = [
   {
     "id": 1,
     "usertype_id": 1,
@@ -26,3 +26,4 @@ export const mockDataTeam = [
     "updated_at": "2023-09-29T03:06:57.000000Z"
   }
 ];
+export default mockDataTeam;
