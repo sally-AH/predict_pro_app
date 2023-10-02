@@ -61,6 +61,14 @@
 | ---| ---| ---|
 | ![Landing](./readme/demo/pie.PNG) | ![fsdaf](./readme/demo/Bar.PNG) | ![fsdaf](./readme/demo/line.PNG) |
 
+| Pie Chart screen | Bar Chart screen |
+| ---| ---|
+| ![Landing](./readme/demo/GIFs/GD1.gif) | ![fsdaf](./readme/demo/GIFs/GG2.gif) |
+
+| Pie Chart screen | Bar Chart screen |
+| ---| ---|
+| ![Landing](./readme/demo/GIFs/GD3.gif) | ![fsdaf](./readme/demo/GIFs/GD4.gif) |
+
 <br><br>
 
 <!-- Tech stack -->
