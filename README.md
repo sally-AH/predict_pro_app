@@ -43,10 +43,17 @@
 | Login screen  | Register screen | Landing screen | Loading screen |
 | ---| ---| ---| ---|
 | ![Landing](./readme/demo/Rloginpage.jpg) | ![fsdaf](./readme/demo/RregisterScreen.jpg) | ![fsdaf](./readme/demo/Rlandingpage.jpg) | ![fsdaf](./readme/demo/Mdash.jpg) |
-| Home screen  | Menu Screen | Order Screen | Checkout Screen |
+| Dashboard  | Stock Screen | Chat Screen | Login/Sign up Screen |
 | ![Landing](./readme/demo/GIFs/ezgif.com-gif-maker.gif) | ![fsdaf](./readme/demo/GIFs/ezgif.com-gif-maker(1).gif) | ![fsdaf](./readme/demo/GIFs/ezgif.com-gif-maker(2).gif) | ![fsdaf](./readme/demo/GIFs/ezgif.com-video-to-gif.gif) |
 
+### User Screens (Admin)
+| Landing screen | USers screen |
+| ---| ---|
+| ![Landing](./readme/demo/Dashboard.PNG) | ![fsdaf](./readme/demo/users.PNG) |
 
+| Light Mode Landing screen | Light Mode USers screen |
+| ---| ---|
+| ![Landing](./readme/demo/Ldash.PNG) | ![fsdaf](./readme/demo/Luser.PNG) |
 
 <br><br>
 
