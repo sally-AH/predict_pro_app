@@ -7,10 +7,12 @@
 
 > The Predicate Pro is a web application specifically designed for supermarkets, in order to track and evaluate customer behavior. Its primary objective is to generate accurate forecasts to get the optimal product placement on shelves, recommendations for increased stock quantities, and identification of items that require inventory reduction. Furthermore, this application gives supermarkets access to detailed monthly reports and visual graphs, allowing them to closely monitor purchase trends and assess profitability. and that will be done using machine learning and artificial intelligence.
 
+### Admin Stories
+- As an Admin, I want to categorize Customers so that I can filter behavior data.
+- As an Admin, I want to get Seasonal Predictions so that I can plan the inventory.
+- As an Admin, I want Inventory Reduction Suggestions so that I can receive recommendations for minimizing waste and improving profit.
+
 ### User Stories
-- As a Supermarket owner, I want to categorize Customers so that I can filter behavior data.
-- As a Supermarket owner, I want to get Seasonal Predictions so that I can plan the inventory.
-- As a Store manager, I want Inventory Reduction Suggestions so that I can receive recommendations for minimizing waste and improving profit.
 - As a user I want to Create a Profile so that I can save my work and data.
 - As a user I want to Edit my Profile so that I can change my info.
 
@@ -49,11 +51,15 @@
 ### User Screens (Admin)
 | Landing screen | USers screen |
 | ---| ---|
-| ![Landing](./readme/demo/Dashboard.PNG) | ![fsdaf](./readme/demo/users.PNG) |
+| ![Landing](./readme/demo/newDash.PNG) | ![fsdaf](./readme/demo/users.PNG) |
 
 | Light Mode Landing screen | Light Mode USers screen |
 | ---| ---|
-| ![Landing](./readme/demo/Ldash.PNG) | ![fsdaf](./readme/demo/Luser.PNG) |
+| ![Landing](./readme/demo/LNdash.PNG) | ![fsdaf](./readme/demo/Luser.PNG) |
+
+| Pie Chart screen | Bar Chart screen | Line Chart screen |
+| ---| ---| ---|
+| ![Landing](./readme/demo/pie.PNG) | ![fsdaf](./readme/demo/Bar.PNG) | ![fsdaf](./readme/demo/line.PNG) |
 
 <br><br>
 
