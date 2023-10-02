@@ -49,11 +49,15 @@
 ### User Screens (Admin)
 | Landing screen | USers screen |
 | ---| ---|
-| ![Landing](./readme/demo/Dashboard.PNG) | ![fsdaf](./readme/demo/users.PNG) |
+| ![Landing](./readme/demo/newDash.PNG) | ![fsdaf](./readme/demo/users.PNG) |
 
 | Light Mode Landing screen | Light Mode USers screen |
 | ---| ---|
-| ![Landing](./readme/demo/Ldash.PNG) | ![fsdaf](./readme/demo/Luser.PNG) |
+| ![Landing](./readme/demo/LNdash.PNG) | ![fsdaf](./readme/demo/Luser.PNG) |
+
+| Pie Chart screen | Bar Chart screen | Line Chart screen |
+| ---| ---| ---|
+| ![Landing](./readme/demo/pie.PNG) | ![fsdaf](./readme/demo/Bar.PNG) | ![fsdaf](./readme/demo/line.PNG) |
 
 <br><br>
 
