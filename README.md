@@ -55,11 +55,20 @@
 
 ###  Predict Pro is built using the following technologies:
 
-- This project uses the [Flutter app development framework](https://flutter.dev/). Flutter is a cross-platform hybrid app development platform which allows us to use a single codebase for apps on mobile, desktop, and the web.
-- For persistent storage (database), the app uses the [Hive](https://hivedb.dev/) package which allows the app to create a custom storage schema and save it to a local database.
-- To send local push notifications, the app uses the [flutter_local_notifications](https://pub.dev/packages/flutter_local_notifications) package which supports Android, iOS, and macOS.
-  - 🚨 Currently, notifications aren't working on macOS. This is a known issue that we are working to resolve!
-- The app uses the font ["Work Sans"](https://fonts.google.com/specimen/Work+Sans) as its main font, and the design of the app adheres to the material design guidelines.
+#### Frontend Development:
+The Fatal Breath app is built using Flutter app development framework. Flutter enables the development of cross-platform mobile applications with a single codebase, allowing it to run seamlessly on various devices, including mobile, desktop, and web.
+
+#### Backend Development:
+For the backend, Laravel is used. Laravel is a robust PHP framework known for its elegant syntax and powerful features, making it ideal for building efficient and secure server-side applications.
+
+#### Database Management:
+The application relies on MySQL for database management. MySQL is a widely used open-source relational database management system that ensures data is stored and retrieved efficiently.
+
+#### Real-time Chat:
+To facilitate real-time communication among users, Firebase Realtime Database is integrated. Firebase is a Google-backed platform that offers real-time database capabilities, making it perfect for features like live chatting within the app.
+
+#### Notifications:
+Firebase Cloud Messaging (FCM) is used for sending push notifications to users. FCM is a cross-platform messaging solution that ensures reliable message delivery across different devices.
 
 <br><br>
 
@@ -68,30 +77,36 @@
 
 > To set up Coffee Express locally, follow these steps:
 
-### Prerequisites
+### Prerequisites for Admin dashboard
 
-This is an example of how to list things you need to use the software and how to install them.
 * npm
   ```sh
   npm install npm@latest -g
   ```
 
+### Prerequisites for the Mobile App
+*  Flutter SDK: Install the Flutter SDK to build and run the mobile application.
+
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/your_username_/Project-Name.git](https://github.com/sally-AH/predict_pro_app.git
    ```
-3. Install NPM packages
+2. Install Laravel dependencies by navigating to the Laravel project directory:
    ```sh
-   npm install
+   cd laravel-backend
+   composer install
    ```
-4. Enter your API in `config.js`
+3. Run Laravel migrations to set up the database:
    ```js
-   const API_KEY = 'ENTER YOUR API';
+   php artisan migrate
+   ```
+4. Navigate to the Flutter app directory:
+   ```sh
+   flutter pub get
+    flutter run
    ```
 
 Now, you should be able to run Coffee Express locally and explore its features.
