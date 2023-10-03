@@ -208,7 +208,7 @@ After prediction:
 > The following tests were conducted in Postman to assess the functionality of my application's primary APIs
 <br>
 
-URL: http://192.168.0.104:8000/api/admin/getusers
+URL: http://34.245.108.208/api/admin/getusers
 
 ```sh 
 PASS  Response status code is 200
@@ -218,7 +218,7 @@ PASS  Each user in the users array has the required properties
 ```
 <br>
 
-URL: http://192.168.0.104:8000/api/admin/prompt
+URL: http://34.245.108.208/api/admin/prompt
 
 ```sh 
 PASS  The product array length must be greater than zero
