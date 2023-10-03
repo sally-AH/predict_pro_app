@@ -49,6 +49,7 @@
 <br><br>
 
 <!-- Prototyping -->
+<a name="prototyping"></a>
 <img src="./readme/title3.svg"/>
 
 > We designed Predict Pro using wireframes and mockups, iterating on the design until we reached the ideal layout for easy navigation and a seamless user experience.
@@ -91,6 +92,7 @@ Firebase Cloud Messaging (FCM) is used for sending push notifications to users. 
 <br><br>
 
 <!-- Demo -->
+<a name="Demo" ></a>
 <img src="./readme/title4.svg"/>
 
 > Using the wireframes and mockups as a guide, we implemented the Predict Pro app with the following features:
@@ -214,7 +216,16 @@ PASS  Response contains the users property
 PASS  Each user in the users array has the required properties
 
 ```
+<br>
 
+URL: http://192.168.0.104:8000/api/admin/prompt
+
+```sh 
+PASS  The product array length must be greater than zero
+PASS  Response time is within acceptable range
+PASS  Response status code is 200
+PASS  Validate the structure of the 'product' object
+```
 <br>
 
 
@@ -224,18 +235,19 @@ PASS  Each user in the users array has the required properties
 
 
 <!-- How to run -->
-<img src="./readme/title6.svg"/>
+<a name="how-to-run" ></a>
+<img src="./readme/title6.svg"/> 
 
 > To set up Coffee Express locally, follow these steps:
-
-### Prerequisites for Admin dashboard
+### Prerequisites 
+##### Admin dashboard
 
 * npm
   ```sh
   npm install npm@latest -g
   ```
 
-### Prerequisites for the Mobile App
+##### Mobile App
 *  Flutter SDK: Install the Flutter SDK to build and run the mobile application.
 
 ### Installation
