@@ -139,8 +139,8 @@ Firebase Cloud Messaging (FCM) is used for sending push notifications to users. 
 Before prediction:
 ```sh
 {
-  invoiveId: 1,
-  branchId: 1,
+  invoice_id: 1,
+  branch_id: 1,
   date: 2032-03-01 06:25:44
   total: 103
 }
