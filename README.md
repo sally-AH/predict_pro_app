@@ -1,11 +1,32 @@
-<img src="./readme/title1.svg"/>
+<img src="./readme/title1.svg"/> 
+<br><br> 
 
-<br><br>
+<img src="./readme/title7.svg"/> 
 
-<!-- project philosophy -->
-<img src="./readme/title2.svg"/>
 
+- [Project Description](#project-description)
+- [User Types](#user-types)
+- [Features of the App](#features-of-the-app)
+- [Tech Stack](#tech-stack)
+  - [Frontend](#Frontend)
+  - [Backend](#Backend)
+- [Prototyping](#prototyping)
+- [Demo](#Demo)
+- [OpenAi](#OpenAi)
+- [Performance](#Performance)
+- [How to Run](#how-to-run)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+
+
+<br><br>  
+
+<!-- Project Description -->
+<a name="project-description"></a>
+<img src="./readme/title2.svg"/> 
 > The Predicate Pro is a web application specifically designed for supermarkets, in order to track and evaluate customer behavior. Its primary objective is to generate accurate forecasts to get the optimal product placement on shelves, recommendations for increased stock quantities, and identification of items that require inventory reduction. Furthermore, this application gives supermarkets access to detailed monthly reports and visual graphs, allowing them to closely monitor purchase trends and assess profitability. and that will be done using machine learning and artificial intelligence.
+<br>
+
 
 
 ### User Types 
@@ -44,7 +65,32 @@
 
 <br><br>
 
-<!-- Implementation -->
+<!-- Tech stack -->
+<a name="tech-stack" ></a>
+<img src="./readme/title5.svg"/>
+
+###  Predict Pro is built using the following technologies:
+
+<a name="Frontend" ></a>
+#### Frontend Development:
+The Fatal Breath app is built using Flutter app development framework. Flutter enables the development of cross-platform mobile applications with a single codebase, allowing it to run seamlessly on various devices, including mobile, desktop, and web.
+
+<a name="Backend" ></a>
+#### Backend Development:
+For the backend, Laravel is used. Laravel is a robust PHP framework known for its elegant syntax and powerful features, making it ideal for building efficient and secure server-side applications.
+
+#### Database Management:
+The application relies on MySQL for database management. MySQL is a widely used open-source relational database management system that ensures data is stored and retrieved efficiently.
+
+#### Real-time Chat:
+To facilitate real-time communication among users, Firebase Realtime Database is integrated. Firebase is a Google-backed platform that offers real-time database capabilities, making it perfect for features like live chatting within the app.
+
+#### Notifications:
+Firebase Cloud Messaging (FCM) is used for sending push notifications to users. FCM is a cross-platform messaging solution that ensures reliable message delivery across different devices.
+
+<br><br>
+
+<!-- Demo -->
 <img src="./readme/title4.svg"/>
 
 > Using the wireframes and mockups as a guide, we implemented the Predict Pro app with the following features:
@@ -53,7 +99,11 @@
 | Login screen  | Register screen | Landing screen | Loading screen |
 | ---| ---| ---| ---|
 | ![Landing](./readme/demo/Rloginpage.jpg) | ![fsdaf](./readme/demo/RregisterScreen.jpg) | ![fsdaf](./readme/demo/Rlandingpage.jpg) | ![fsdaf](./readme/demo/Mdash.jpg) |
+
+
+
 | Dashboard  | Stock Screen | Chat Screen | Login/Sign up Screen |
+| ---| ---| ---| ---|
 | ![Landing](./readme/demo/GIFs/ezgif.com-gif-maker.gif) | ![fsdaf](./readme/demo/GIFs/ezgif.com-gif-maker(1).gif) | ![fsdaf](./readme/demo/GIFs/ezgif.com-gif-maker(2).gif) | ![fsdaf](./readme/demo/GIFs/ezgif.com-video-to-gif.gif) |
 
 ### User Screens (Admin)
@@ -77,29 +127,74 @@
 | ---| ---|
 | ![Landing](./readme/demo/GIFs/GD3.gif) | ![fsdaf](./readme/demo/GIFs/GD4.gif) |
 
-<br><br>
 
-<!-- Tech stack -->
-<img src="./readme/title5.svg"/>
+<br><br> 
 
-###  Predict Pro is built using the following technologies:
+<a name="OpenAi" ></a>
+<img src="./readme/title8.svg"/>
+<br>
 
-#### Frontend Development:
-The Fatal Breath app is built using Flutter app development framework. Flutter enables the development of cross-platform mobile applications with a single codebase, allowing it to run seamlessly on various devices, including mobile, desktop, and web.
+Before prediction:
+```sh
+{
+  invoiveId: 1,
+  branchId: 1,
+  date: 2032-03-01 06:25:44
+  total: 103
+}
+```
+<br>
+After prediction: 
 
-#### Backend Development:
-For the backend, Laravel is used. Laravel is a robust PHP framework known for its elegant syntax and powerful features, making it ideal for building efficient and secure server-side applications.
+```sh 
+  {
+  "product": {
+    "times of buying": {
+        "Kimberly Snacks" => 3,
+        "Clorox Snacks" => 25,
+        "Kellogg's Snacks" => 74,
+        "Hormel Household" => 8,
+     }
 
-#### Database Management:
-The application relies on MySQL for database management. MySQL is a widely used open-source relational database management system that ensures data is stored and retrieved efficiently.
+  "total revenues": {
+        "Kimberly Snacks" => 197.46,
+        "Clorox Snacks" => 168.18,
+        "Kellogg's Snacks" => 140.37,
+        "Hormel Household" =>134.07,
+     }
+  },
+"weekly revenues in each month": {
+    "May 2023": {
+      "Week 1": 580.6,
+      "Week 2": 596.6,
+      "Week 3": 509.6,
+      "Week 4":  482.7,
+      "Week 5":  355.6
+    },
+  },
 
-#### Real-time Chat:
-To facilitate real-time communication among users, Firebase Realtime Database is integrated. Firebase is a Google-backed platform that offers real-time database capabilities, making it perfect for features like live chatting within the app.
+  "monthly revenues": {
+    "May 2023": 2614.2,
+    "June 2023": 2614.2,
+    "July 2023": 2614.2,
+    "August 2023": 2614.2,
+    "September 2023": 1357.5
+  },
+  "total revenues from all products": 3706.1,
+  "top 5 products": {
+   {
+      "product" => "Kimberly Snacks",
+      "revenue" => 191.46
+    },
+   {
+      "product" => "Clorox Snacks",
+      "revenue" => 168.18
+    },
 
-#### Notifications:
-Firebase Cloud Messaging (FCM) is used for sending push notifications to users. FCM is a cross-platform messaging solution that ensures reliable message delivery across different devices.
+  }
+}
 
-<br><br>
+```
 
 <!-- How to run -->
 <img src="./readme/title6.svg"/>
