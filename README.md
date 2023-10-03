@@ -98,26 +98,26 @@ Firebase Cloud Messaging (FCM) is used for sending push notifications to users. 
 > Using the wireframes and mockups as a guide, we implemented the Predict Pro app with the following features:
 
 ### User Screens (Mobile)
-| Login screen  | Register screen | Landing screen | Loading screen |
+| Login Screen  | Register Screen | Landing Screen | Loading Screen |
 | ---| ---| ---| ---|
 | ![Landing](./readme/demo/Rloginpage.jpg) | ![fsdaf](./readme/demo/RregisterScreen.jpg) | ![fsdaf](./readme/demo/Rlandingpage.jpg) | ![fsdaf](./readme/demo/Mdash.jpg) |
 
 
 
-| Dashboard  | Stock Screen | Chat Screen | Login/Sign up Screen |
+| Dashboard Screen | Stock Screen | Chat Screen | Login/Sign up Screen |
 | ---| ---| ---| ---|
 | ![Landing](./readme/demo/GIFs/ezgif.com-gif-maker.gif) | ![fsdaf](./readme/demo/GIFs/ezgif.com-gif-maker(1).gif) | ![fsdaf](./readme/demo/GIFs/ezgif.com-gif-maker(2).gif) | ![fsdaf](./readme/demo/GIFs/ezgif.com-video-to-gif.gif) |
 
 ### User Screens (Admin)
-| Landing screen | USers screen |
+| Landing Screen | Users Screen |
 | ---| ---|
 | ![Landing](./readme/demo/newDash.PNG) | ![fsdaf](./readme/demo/users.PNG) |
 
-| Light Mode Landing screen | Light Mode USers screen |
+| Light Mode Landing Screen | Light Mode Users Screen |
 | ---| ---|
 | ![Landing](./readme/demo/LNdash.PNG) | ![fsdaf](./readme/demo/Luser.PNG) |
 
-| Pie Chart screen | Bar Chart screen | Line Chart screen |
+| Pie Chart Screen | Bar Chart Screen | Line Chart Screen |
 | ---| ---| ---|
 | ![Landing](./readme/demo/pie.PNG) | ![fsdaf](./readme/demo/Bar.PNG) | ![fsdaf](./readme/demo/line.PNG) |
 
@@ -125,7 +125,7 @@ Firebase Cloud Messaging (FCM) is used for sending push notifications to users. 
 | ---| ---|
 | ![Landing](./readme/demo/GIFs/GD1.gif) | ![fsdaf](./readme/demo/GIFs/GG2.gif) |
 
-| Bar Chart screen | Pie Chart screen |
+| Bar Chart Screen | Pie Chart Screen |
 | ---| ---|
 | ![Landing](./readme/demo/GIFs/GD3.gif) | ![fsdaf](./readme/demo/GIFs/GD4.gif) |
 
