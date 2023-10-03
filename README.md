@@ -196,6 +196,33 @@ After prediction:
 
 ```
 
+<br><br> 
+
+
+
+
+<a name="Performance" ></a>
+<img src="./readme/title9.svg"/> 
+> The following tests were conducted in Postman to assess the functionality of my application's primary APIs
+<br>
+
+URL: http://192.168.0.104:8000/api/admin/getusers
+
+```sh 
+PASS  Response status code is 200
+PASS  Response contains the users property
+PASS  Each user in the users array has the required properties
+
+```
+
+<br>
+
+
+
+
+<br><br> 
+
+
 <!-- How to run -->
 <img src="./readme/title6.svg"/>
 
