@@ -74,7 +74,7 @@
 
 <a name="Frontend" ></a>
 #### Frontend Development:
-The Fatal Breath app is built using Flutter app development framework. Flutter enables the development of cross-platform mobile applications with a single codebase, allowing it to run seamlessly on various devices, including mobile, desktop, and web.
+The Predict Pro app is built using Flutter app development framework. Flutter enables the development of cross-platform mobile applications with a single codebase, allowing it to run seamlessly on various devices, including mobile, desktop, and web.
 
 <a name="Backend" ></a>
 #### Backend Development:
