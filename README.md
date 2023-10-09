@@ -255,7 +255,7 @@ PASS  Validate the structure of the 'product' object
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git](https://github.com/sally-AH/predict_pro_app.git
+   git clone https://github.com/sally-AH/predict_pro_app.git
    ```
 2. Install Laravel dependencies by navigating to the Laravel project directory:
    ```sh
@@ -272,4 +272,4 @@ PASS  Validate the structure of the 'product' object
     flutter run
    ```
 
-Now, you should be able to run Coffee Express locally and explore its features.
+Now, you should be able to run Predict Pro locally and explore its features.
